@@ -26,8 +26,8 @@ $(call inherit-product-if-exists, vendor/samsung/celoxhd/celoxhd-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += device/samsung/celoxhd/overlay
 
 # Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := normal hdpi
-PRODUCT_AAPT_PREF_CONFIG := hdpi
+PRODUCT_AAPT_CONFIG := normal xhdpi hdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
@@ -47,6 +47,9 @@ PRODUCT_COPY_FILES += \
 # Vold
 PRODUCT_COPY_FILES += \
     device/samsung/celoxhd/vold.fstab:system/etc/vold.fstab
+
+# QRNGD
+PRODUCT_PACKAGES += qrngd
 
 # common msm8660
 $(call inherit-product, device/samsung/msm8660-common/msm8660.mk)
